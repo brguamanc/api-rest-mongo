@@ -35,7 +35,27 @@ router.get("/bus/:id", (req, res) => {
       .then((data) => res.json(data))
       .catch((error) => res.json({ message: error }));
 });
-
+router.get("/bus/viaje_id/:viaje_id", (req, res) => {
+  const { viaje_id } = req.params;
+  busSchema
+    .find({ viaje_id: viaje_id })
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+router.get("/bus/destino/:destino", (req, res) => {
+  const { destino } = req.params;
+  busSchema
+    .find({ destino: destino })
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+router.get("/bus/origen/:origen", (req, res) => {
+  const { origen } = req.params;
+  busSchema
+    .find({ origen: origen })
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
 router.put("/bus/:id", (req, res) => {
   const { id } = req.params;
   const {viaje_id,empresa,destino,origen,horaSalida,horaLlegada}=req.body;
