@@ -38,7 +38,7 @@ router.get("/bus/:id", (req, res) => {
 router.get("/bus/viaje_id/:viaje_id", (req, res) => {
   const { viaje_id } = req.params;
   busSchema
-    .find({ viaje_id: viaje_id })
+    .findOne({ viaje_id: viaje_id })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
