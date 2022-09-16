@@ -1,7 +1,7 @@
 const  express= require("express");
 const mongoose=require("mongoose");
 require("dotenv").config();
-const cityRoutes=require('./src/routes/ciudades')
+const busRoutes=require('./src/routes/busRoutes')
 
 const app = express();
 const port = process.env.PORT||9000;
@@ -9,13 +9,14 @@ const port = process.env.PORT||9000;
 
 //middleware
 app.use(express.json());
-app.use('/api',cityRoutes)
+app.use("/api", busRoutes);
 
 
 //routes
 
 app.get('/',(req,res)=>{
-    res.send("welcome to mi api")
+    res.send({"message":"welcome to my rest-api,connected to MongoDB Atlas"})
+
 })
 
 //mongodb connection
