@@ -50,7 +50,7 @@ router.put("/bus/:id", (req, res) => {
 router.delete("/bus/:id", (req, res) => {
   const { id } = req.params;
   busSchema
-    .remove({_id:id})
+    .deleteOne({_id:id})
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
