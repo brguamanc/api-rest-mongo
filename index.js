@@ -5,7 +5,9 @@ require("dotenv").config();
 const busRoutes=require('./src/routes/busRoutes')
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin:"*"
+}));
 const port = process.env.PORT||9000;
 
 
