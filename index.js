@@ -7,7 +7,7 @@ const busRoutes=require('./src/routes/busRoutes')
 const app = express();
 app.use(
   cors({
-    origin: "https://api-rest-mongo.vercel.app",
+    origin: "*",
     methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
   })
 );
