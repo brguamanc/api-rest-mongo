@@ -29,7 +29,6 @@ const busSchema = mongoose.Schema(
   }
 },
 {
-  timestamps:true,
   versionKey:false
 }
 

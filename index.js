@@ -4,7 +4,6 @@ const cors = require("cors");
 require("dotenv").config();
 const busRoutes=require('./src/routes/busRoutes')
 
-process.env.TZ = "GMT-5";
 
 const app = express();
 app.use(
