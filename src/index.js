@@ -2,14 +2,13 @@ const  express= require("express");
 const mongoose=require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
-const busRoutes=require('./src/routes/busRoutes')
+const busRoutes=require('./routes/busRoutes')
 
 const app = express();
 app.use(
   cors({
     origin: "*",
-    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
-  })
+   })
 );
 const port = process.env.PORT||9000;
 
@@ -27,10 +26,10 @@ app.get('/',(req,res)=>{
 })
 
 //mongodb connection
-
-mongoose.connect(
-  process.env.MONGODB_URI
-).then( ()=>console.log("Connected to MongoDB Atlas")).catch((error)=>console.error(error));
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => console.log("Connected to MongoDB Atlas"))
+  .catch((error) => console.error(error));
 
 
 

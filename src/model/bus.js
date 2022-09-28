@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
 
-const busSchema = mongoose.Schema({
+const busSchema = mongoose.Schema(
+  {
   viaje_id: {
     type: String,
     required: true,
+    unique:true
   },
   empresa: {
     type: String,
@@ -24,11 +26,13 @@ const busSchema = mongoose.Schema({
   horaLlegada: {
     type: String,
     required: true,
-  },
-  updated: {
-    type: Date,
-    default: Date.now,
-  },
-});
+  }
+},
+{
+  timestamps:true,
+  versionKey:false
+}
+
+);
 
 module.exports = mongoose.model("Bus", busSchema);
