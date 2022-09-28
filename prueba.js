@@ -1,1 +1,1 @@
-const busRoutes = require("./src/index");
+const busRoutes = require("./index");
