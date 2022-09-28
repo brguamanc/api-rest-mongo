@@ -1,1 +1,0 @@
-const busRoutes = require("./index");
