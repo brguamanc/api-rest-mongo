@@ -4,8 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 const busRoutes=require('./src/routes/busRoutes')
 
-var moment = require('moment-timezone');
-moment().tz('America/Guayaquil').format();
+process.env.TZ = "GMT-5";
 
 const app = express();
 app.use(
