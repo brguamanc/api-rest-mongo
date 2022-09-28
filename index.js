@@ -5,7 +5,7 @@ require("dotenv").config();
 const busRoutes=require('./src/routes/busRoutes')
 
 var moment = require('moment-timezone');
-moment().tz(America/Guayaquil).format();
+moment().tz('America/Guayaquil').format();
 
 const app = express();
 app.use(
