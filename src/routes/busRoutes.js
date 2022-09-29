@@ -30,6 +30,7 @@ router.get("/bus/:id", (req, res) => {
       .catch((error) => res.json({ message: error }));
 });
 
+
 router.get("/bus/destino/:destino", (req, res) => {
   const { destino } = req.params;
   busSchema
@@ -68,5 +69,30 @@ router.delete("/bus/:id", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
+router.get("/busid/:busId", (req, res) => {
+  const { busId } = req.params;
+  busSchema
+    .findOne({ busId: busId })
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+router.delete("/busid/:busId", (req, res) => {
+  const { busId } = req.params;
+  busSchema
+    .deleteOne({ busId: busId })
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+router.put("/busid/:busId", (req, res) => {
+  const { busId } = req.params;
+  const { empresa, destino, origen, horaSalida } = req.body;
+  busSchema
+    .updateOne(
+      { busId: busId },
+      { $set: { empresa, destino, origen, horaSalida } }
+    )
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
 
 module.exports=router

@@ -3,8 +3,9 @@ const mongoose = require("mongoose");
 const busSchema = mongoose.Schema(
   {
   busId:{
-    type: String,
+    type: Number,
     required: false,
+    unique:true
   },
   empresa: {
     type: String,
