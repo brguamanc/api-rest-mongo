@@ -17,6 +17,7 @@ router.post('/bus',(req,res)=>{
 router.get("/buses", (req, res) => {
   busSchema
     .find()
+    .sort({horaSalida:1})
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
@@ -33,6 +34,7 @@ router.get("/bus/destino/:destino", (req, res) => {
   const { destino } = req.params;
   busSchema
     .find({ destino: destino })
+    .sort({ horaSalida: 1 })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
@@ -41,6 +43,7 @@ router.get("/bus/origen/:origen", (req, res) => {
   const { origen } = req.params;
   busSchema
     .find({ origen: origen })
+    .sort({ horaSalida: 1 })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
