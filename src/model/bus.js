@@ -2,11 +2,6 @@ const mongoose = require("mongoose");
 
 const busSchema = mongoose.Schema(
   {
-  viaje_id: {
-    type: String,
-    required: true,
-    unique:true
-  },
   empresa: {
     type: String,
     required: true,
