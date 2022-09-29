@@ -17,7 +17,7 @@ router.post('/bus',(req,res)=>{
 router.get("/buses", (req, res) => {
   busSchema
     .find()
-    .sort({horaSalida:1})
+    .sort({ busId :1})
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
