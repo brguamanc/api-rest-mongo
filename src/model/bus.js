@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 const busSchema = mongoose.Schema(
   {
+  busId:{
+    type: String,
+    required: false,
+  },
   empresa: {
     type: String,
     required: true,
