@@ -58,11 +58,11 @@ router.get("/bus/origen/:origen", (req, res) => {
 });
 router.put("/bus/:id", (req, res) => {
   const { id } = req.params;
-  const {viaje_id,empresa,destino,origen,horaSalida,horaLlegada}=req.body;
+  const {viaje_id,empresa,destino,origen,horaSalida}=req.body;
   busSchema
     .updateOne(
       { _id: id },
-      {$set: {viaje_id, empresa, destino, origen, horaSalida, horaLlegada} }
+      {$set: {viaje_id, empresa, destino, origen, horaSalida} }
     )
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));

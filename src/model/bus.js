@@ -23,10 +23,7 @@ const busSchema = mongoose.Schema(
     type: String,
     required: true,
   },
-  horaLlegada: {
-    type: String,
-    required: true,
-  }
+
 },
 {
   versionKey:false
