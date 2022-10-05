@@ -49,6 +49,16 @@ router.get("/bus/origen/:origen", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
+router.post("/bus/busqueda", (req, res) => {
+  const { origen ,destino} = req.body;
+
+  busSchema
+    .find({$and:[{ origen: origen},{destino:destino }]})
+    .sort({ horaSalida: 1 })
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+
 router.put("/bus/:id", (req, res) => {
   const { id } = req.params;
   const {empresa,destino,origen,horaSalida}=req.body;
