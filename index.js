@@ -6,24 +6,20 @@ const busRoutes=require('./src/routes/busRoutes')
 
 
 const app = express();
-app.use(
-  cors({
-    origin: "*",
-   })
-);
+
 const port = process.env.PORT||9000;
 
 
 //middleware
 app.use(express.json());
-app.use("/api", busRoutes);
+app.use(cors());
 
 
 //routes
-
+app.use("/api", busRoutes);
 app.get('/',(req,res)=>{
     res.send({"message":"welcome to my rest-api,connected to MongoDB Atlas"})
-
+    
 })
 
 //mongodb connection
