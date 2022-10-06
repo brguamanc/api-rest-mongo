@@ -3,7 +3,7 @@ const mongoose=require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 const busRoutes=require('./src/routes/busRoutes')
-
+const login = require("./src/routes/login");
 
 const app = express();
 
@@ -17,6 +17,7 @@ app.use(cors());
 
 //routes
 app.use("/api", busRoutes);
+app.use("/login", login);
 app.get('/',(req,res)=>{
     res.send({"message":"welcome to my rest-api,connected to MongoDB Atlas"})
     
