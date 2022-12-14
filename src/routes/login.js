@@ -14,7 +14,7 @@ router.post("/usuario", (req, res) => {
         err: erro,
       });
     }
-    // Verifica que exista un usuario con el mail escrita por el usuario new.
+    // Verifica que exista un usuario con el mail escrita por el usuario newee.
     if (!usuarioDB) {
       return res.status(400).json({
         ok: false,
